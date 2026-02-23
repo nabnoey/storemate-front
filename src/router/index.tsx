@@ -17,29 +17,30 @@ const MainLayout = lazy(() => import("../layouts/MainLayout"));
 const LoginPage = lazy(() => import("../pages/auth/LoginPage"));
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
     {
-        path:"/",
-        element:<MainLayout/>,
-        children:[
-
-
+      path: "/",
+      element: <MainLayout />,
+      children: [
         {
-            path:"/",
-            element:<Home/>
-
-
+          path: "/",
+          element: <Home />,
         },
-         {
-    path:"/register",
-    element:<RegisterPage/>
+        {
+          path: "/register",
+          element: <RegisterPage />,
+        },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+      ],
     },
-    {
-        path:"/login",
-        element:<LoginPage/>
-    }
-        ]   
-    }
-])
+  ],
+  {
+    basename: "/storemate-front",
+  }
+);
 
 export default router;
