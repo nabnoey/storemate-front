@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
       {/* RIGHT */}
       <div className="navbar-end flex gap-8 text-black px-15 ">
         <FiSearch size={24} />
-        <FaCartShopping size={24} />
+        <FaCartShopping size={24} onClick={()=>navigate("shopping-cart")}/>
         <BiSolidBell size={24} />
 
         {isAuthenticated ? (

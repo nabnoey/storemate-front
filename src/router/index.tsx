@@ -1,22 +1,13 @@
+
 import { createBrowserRouter } from "react-router";
-
-// import Home from "../pages/HomePage";
-// import CartPage from "../pages/CartPage"
-// import RegisterPage from "../pages/auth/RegisterPage";
-// import MainLayout from "../layouts/MainLayout";
-// import LoginPage from "../pages/auth/LoginPage";
-// import ForgotPassword from "../pages/auth/ForgotPassword";
-// import Profile from "../pages/users/Profile"
-// import ResetPassword from "../pages/auth/ResetPassword";
-
 
 import {lazy} from "react";
 const Home = lazy(() => import("../pages/HomePage"));
 const RegisterPage = lazy  (() => import("../pages/auth/RegisterPage"));
 const MainLayout = lazy(() => import("../layouts/MainLayout"));
 const LoginPage = lazy(() => import("../pages/auth/LoginPage"));
-
-
+const ShoppingCart = lazy(() => import("../pages/users/ShoppingCart"));
+ 
 const router = createBrowserRouter([
     {
         path:"/",
@@ -37,6 +28,10 @@ const router = createBrowserRouter([
     {
         path:"/login",
         element:<LoginPage/>
+    },
+    {
+        path:"/shopping-cart",
+        element:<ShoppingCart/>
     }
         ]   
     }
